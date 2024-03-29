@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <style>
+ *,
+*::after,
+*::before{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+.html{
+    font-size: 62.5%;
+}
+.navbar input[type="checkbox"],
+.navbar .hamburger-lines{
+    display: none;
+}
+.container{
+    max-width: 1200px;
+    width: 90%;
+    margin: auto;
+}
+.navbar{
+    box-shadow: 0px 5px 10px 0px #aaa;
+    width: 100%;
+    background: #fff;
+    color: #000;
+    opacity: 0.85;
+    z-index: 100;
+}
+.navbar-container{
+    display: flex;
+    justify-content: space-between;
+    height: 80px;
+    align-items: center;
+}
+.menu-items{
+    order: 2;
+    display: flex;
+}
+.logo{
+    order: 1;
+    font-size: 2.3rem;
+}
+.menu-items li{
+    list-style: none;
+    margin-left: 1.5rem;
+    font-size: 1.3rem;
+}
+.navbar a{
+    color: #444;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease-in-out;
+}
+.navbar a:hover{
+    color: #117964;
+}
+@media (max-width: 768px){
+    .navbar{
+        opacity: 0.95;
+    }
+    .navbar-container input[type="checkbox"],
+    .navbar-container .hamburger-lines{
+        display: block;
+    }
+    .navbar-container{
+        display: block;
+        position: relative;
+        height: 64px;
+    }
+    .navbar-container input[type="checkbox"]{
+        position: absolute;
+        display: block;
+        height: 32px;
+        width: 30px;
+        top: 20px;
+        left: 20px;
+        z-index: 5;
+        opacity: 0;
+        cursor: pointer;
+    }
+    .navbar-container .hamburger-lines{
+        display: block;
+        height: 28px;
+        width: 35px;
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        z-index: 2;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    .navbar-container .hamburger-lines .line{
+        display: block;
+        height: 4px;
+        width: 100%;
+        border-radius: 10px;
+        background: #333;
+    }
+    .navbar-container .hamburger-lines .line1{
+        transform-origin: 0% 0%;
+        transition: transform 0.3s ease-in-out;
+    }
+    .navbar-container .hamburger-lines .line2{
+        transition: transform 0.2s ease-in-out;
+    }
+    .navbar-container .hamburger-lines .line3{
+        transform-origin: 0% 100%;
+        transition: transform 0.3s ease-in-out;
+    }
+    .navbar .menu-items{
+        padding-top: 100px;
+        background: #fff;
+        height: 100vh;
+        max-width: 300px;
+        transform: translate(-150%);
+        display: flex;
+        flex-direction: column;
+        margin-left: -40px;
+        padding-left: 40px;
+        transition: transform 0.5s ease-in-out;
+        box-shadow:  5px 0px 10px 0px #aaa;
+        overflow: scroll;
+    }
+    .navbar .menu-items li{
+        margin-bottom: 1.8rem;
+        font-size: 1.1rem;
+        font-weight: 500;
+    }
+    .logo{
+        position: absolute;
+        top: 10px;
+        right: 15px;
+        font-size: 2.5rem;
+    }
+    .navbar-container input[type="checkbox"]:checked ~ .menu-items{
+        transform: translateX(0);
+    }
+    .navbar-container input[type="checkbox"]:checked ~ .hamburger-lines .line1{
+        transform: rotate(45deg);
+    }
+    .navbar-container input[type="checkbox"]:checked ~ .hamburger-lines .line2{
+        transform: scaleY(0);
+    }
+    .navbar-container input[type="checkbox"]:checked ~ .hamburger-lines .line3{
+        transform: rotate(-45deg);
+    }
+}
+@media (max-width: 500px){
+    .navbar-container input[type="checkbox"]:checked ~ .logo{
+        display: none;
+    }
+}
+.para-fntvw{
+    font-size:15px;
+    font-weight: 500;
+    letter-spacing: 0.75px;
+    text-align: justify;
+}
+    </style>
+</head>
+<body>
+       <nav class="navbar">
+        <div class="navbar-container container">
+            <input type="checkbox" name="" id="">
+            <div class="hamburger-lines">
+                <span class="line line1"></span>
+                <span class="line line2"></span>
+                <span class="line line3"></span>
+            </div>
+            <ul class="menu-items">
+                <li><a href="/addstudents">Student Add</a></li>
+                <li><a href="#">Class Add</a></li>
+                <li><a href="/student">List Student</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+           <h1 class="logo">
+               <a href="/home">
+            <img  style="width: 60px; height: 60px;"
+src="data:image/jpe==">
+<p style="margin-top: -60px; margin-left: 70px;">{{college}}</p>
+           </a></h1>
+        </div>
+    </nav>
+    <img style="width: 100%;height:500px; text-align: center;" src="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/cefc3334625281.56d77ace1c99a.png" alt="hone">
+    <div class="container mt-4">
+        <div class="row">
+            <div class="col-md-6 mt-5">
+                <h4><b>Lorem, ipsum dolor.</b></h4>
+                <p class="para-fntvw">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Modi tempora saepe quaerat, sunt tempore molestias tenetur suscipit hic provident! Unde voluptatibus sapiente veniam eius temporibus asperiores, odio cumque culpa nobis ab ipsa recusandae maiores tempore, fugit eum. Quas optio pariatur nulla in sint rerum ex perspiciatis fuga voluptates? Doloremque sit nesciunt optio sequi, maxime deleniti perspiciatis esse nostrum quaerat facere cupiditate dicta tenetur, ex ipsum vel suscipit. Inventore aperiam iste, dolorum reprehenderit adipisci nihil aliquid minima rem sed ad minus soluta, eos deleniti ratione voluptate necessitatibus neque dignissimos esse. Ullam minima quos repellat fugiat deleniti voluptas amet odit expedita unde!</p>
+            </div>
+            <div class="col-md-6">
+                <div>
+                    <img class="img-fluid shadow-sm" style="border-radius:0px 35px 0px 35px;" src="https://edit.org/img/blog/fnt-university-accommodation-ad-template-customize.webp" alt="hone">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container mt-5">
+        <h3 class="text-primary text-center"><b>Department</b></h3>
+        <div class="row">
+         <div class="col-md-4 mt-3">
+            <div class="text-center">
+                <img src="https://acu.edu.eg/Media/NewsPortalImages/2022/7/21/2022-637940080085230581-523.jpeg" alt="department" class="img-fluid rounded shadow">
+            </div>
+            <h5 class="text-center mt-3"><b>Faculty of Design & Arts</b></h5>
+         </div>
+         <div class="col-md-4 mt-3">
+            <div class="text-center">
+                <img src="https://giki.edu.pk/wp-content/uploads/2023/04/FCSE1-209x300.jpg" alt="department" class="img-fluid rounded shadow">
+            </div>
+            <h5 class="text-center mt-3"><b>Faculty of Computer Science & Engineering</b></h5>
+         </div>
+         <div class="col-md-4 mt-3">
+            <div class="text-center">
+                <img src="https://www.besonline.in/college_images/faculty-of-engineering-and-technology-jufet-bangalore-fees-structure.jpg" alt="department" class="img-fluid rounded shadow">
+            </div>
+            <h5 class="text-center mt-3"><b>Faculty of Engineering & Technology</b></h5>
+         </div>
+         <div class="col-md-4 mt-3">
+            <div class="text-center">
+                <img src="https://paruluniversity.ac.in/app/20201109/images/faculty/617071Architecture%20-2.jpg" alt="department" class="img-fluid rounded shadow">
+            </div>
+            <h5 class="text-center mt-3"><b>Faculty of Planning & Architecture</b></h5>
+         </div>
+         <div class="col-md-4 mt-3">
+            <div class="text-center">
+                <img src="https://live.staticflickr.com/3174/2296967259_ee567d5906_z.jpg" alt="department" class="img-fluid rounded shadow">
+            </div>
+            <h5 class="text-center mt-3"><b>Faculty of Management & Commerce</b></h5>
+         </div>
+         <div class="col-md-4 mt-3">
+            <div class="text-center">
+                <img src="https://www.saveetha.ac.in/images/SH1-1024x447.jpg" alt="department" class="img-fluid rounded shadow">
+            </div>
+            <h5 class="text-center mt-3"><b>Faculty of Science & Humanities</b></h5>
+         </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>
